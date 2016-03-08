@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> SVG </title>
+    <style type="text/css">
+
+      h1{
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: normal;
+      }
+
+      @keyframes appear {
+        from {transform: rotateZ(0deg) scale(0, 0);}
+        to {transform: rotateZ(360deg) scale(1, 1);}
+      }
+
+      body {
+
+        background-image: url("space.jpg");
+
+      }
+
+      #circles:hover {
+        transition: all 1s ease;
+        opacity:1;
+        transition-property: transoform;
+        transition-duration: 1s;
+        transform-origin: 100%, 100%;
+        transform: rotate(30deg);
+      }
+
+      #cluster{
+        transition: all 1s ease;
+        opacity:1;
+        transform: rotate(50deg);
+        animation: appear 2s;
+      }
+
+      #cluster:active {
+        transition-property:transform;
+        transition-duration:1s;
+        transform: rotate(10deg);
+        opacity:.4;
+      }
+
+
+      #shapes:hover {
+        transition: all 1s ease;
+        opacity:0.5;
+        perspective: 150px;
+        transform:rotate3d(0,0,1,60deg);
+      }
+
+
+
+    </style>
+  </head>
+
+
+  <body>
+    <h1> Drawing on the Web | SVG | Assignment #2 </h1>
+
+    <svg width="1000" height="1000">
+
+      <g id="circles">
+          <circle cx="400" cy="100" r="60" fill="blue" fill-opacity="0.8"/>
+          <circle cx="5000" cy="100" r="60" fill="green" fill-opacity="0.3"/>
+          <circle cx="600" cy="150" r="60" fill="cyan" fill-opacity="0.8"/>
+      </g>
+
+        <a xlink:href="https://www.youtube.com/watch?v=pmuFOuh3QHs">
+          <g id="cluster">
+            <circle cx="550" cy="200" r="60" fill="green" fill-opacity="0.3"/>
+            <circle cx="600" cy="250" r="60" fill="cyan" fill-opacity="0.8"/>
+          </g>
+        </a>
+
+      <g id="shapes">
+        <rect x="400" y="400" width="150" height="150" fill="blue" fill-opacity=".5"/>
+        <rect x="450" y="400" width="150" height="150" fill="blue" fill-opacity=".5"/>
+      </g>
+
+    </svg>
+
+  </body>
+  </html>
